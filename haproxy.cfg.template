@@ -58,15 +58,17 @@ defaults
     maxconn                 3000
 
 #---------------------------------------------------------------------
-# simple tcp L2 routing to backend
+# simple tcp L2 routing to backend with loadbalancing 
 #---------------------------------------------------------------------
 
 listen tcpvip 
-      bind 0.0.0.0:443
+      bind 0.0.0.0:PORT
       mode tcp
       option tcplog
       balance leastconn
-      server backend 192.168.1.1:443 check
+      server backend BACKEND1:BACKEND_PORT1 check
+      server backend BACKEND2:BACKEND_PORT2 check
+      
 
 
 
