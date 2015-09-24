@@ -62,7 +62,7 @@ defaults
 #---------------------------------------------------------------------
 
 listen tcpvip 
-      bind 0.0.0.0:RELAY_PORT
+      bind 0.0.0.0:8080
       mode tcp
       option tcplog
       balance leastconn
