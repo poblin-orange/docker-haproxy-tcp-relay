@@ -3,6 +3,6 @@ MAINTAINER Orange Elpaaso Team <xx@orange.com>
 COPY haproxy.cfg.template /usr/local/etc/haproxy/haproxy.cfg.template
 COPY configure.sh /usr/local/etc/haproxy/configure.sh
 
-RUN chmod ugo+x configure.sh
+RUN chmod ugo+x /usr/local/etc/haproxy/configure.sh
 
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
