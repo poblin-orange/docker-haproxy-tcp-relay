@@ -44,8 +44,6 @@ defaults
     log                     global
     option                  httplog
     option                  dontlognull
-    option http-server-close
-    option forwardfor       except 127.0.0.0/8
     option                  redispatch
     retries                 3
     timeout http-request    10s
@@ -53,7 +51,6 @@ defaults
     timeout connect         10s
     timeout client          1m
     timeout server          1m
-    timeout http-keep-alive 10s
     timeout check           10s
     maxconn                 3000
 
@@ -66,8 +63,8 @@ listen tcpvip
       mode tcp
       option tcplog
       balance leastconn
-      server backend BACKEND1:BACKEND_PORT1 check
-      server backend BACKEND2:BACKEND_PORT2 check
+      server backend1 BACKEND1:BACKEND_PORT1 check
+      server backend2 BACKEND2:BACKEND_PORT2 check
       
 
 
