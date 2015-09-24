@@ -28,9 +28,9 @@ global
     chroot      /var/lib/haproxy
     pidfile     /var/run/haproxy.pid
     maxconn     4000
-    user        haproxy
-    group       haproxy
-    daemon
+    #user        haproxy
+    #group       haproxy
+    #daemon
 
     # turn on stats unix socket
     stats socket /var/lib/haproxy/stats
