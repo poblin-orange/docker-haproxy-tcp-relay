@@ -12,4 +12,4 @@ sed -i -e 's/BACKEND2/$BACKEND2/g' /usr/local/etc/haproxy/haproxy.cfg
 cat /usr/local/etc/haproxy/haproxy.cfg
 
 #launch haproxy with generated config
-haproxy -f /usr/local/etc/haproxy/haproxy.cfg
+haproxy -f /usr/local/etc/haproxy/haproxy.cfg > /var/log/haproxy.log 2>/var/log.haproxy.err.log
